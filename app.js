@@ -141,6 +141,24 @@ function problemOne(){
 //2. Create a function that will return all dishes with the cuisine type of "Italian" and a serving size greater than 5.
 //Filter
 
+function problemTwo(callback){
+  let results = dishes.filter(function(dish){
+    if(dish.cuisine === "Italian" && (callback(dish.servings))){
+      return true;
+    }
+  })
+  return results;
+}
+
+  function servGreaterThanFive(num){
+    if(num > 5){
+      return true;
+    }
+  }
+
+  let problemTwoResults = problemTwo(servGreaterThanFive)
+  console.log(problemTwoResults)
+
 //3. Create a function that will return only dishes whose serving id number matches their serving count.
 //Filter
 
@@ -213,8 +231,8 @@ function findChickpea(ingredients){
   }
 }
 
-let foodFinderResult = foodFinder(findChickpea)
-console.log(foodFinderResult)
+// let foodFinderResult = foodFinder(findChickpea)
+// console.log(foodFinderResult)
 
 //10. Create a function that will return the total serving count of all dishes.
 //Must use Reduce, not a loop.
