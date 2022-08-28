@@ -163,8 +163,8 @@ function findEven(num){
   }
 }
 
-let evenServings = evenServingCounts(findEven)
-console.log(evenServings)
+// let evenServings = evenServingCounts(findEven)
+// console.log(evenServings)
 
 
 
@@ -179,6 +179,14 @@ console.log(evenServings)
 
 //7. Create a function that will append the cuisine type to the start of the dish's name. Ie, "Italian Pizza"
 //Map
+function newNames(){
+  let newNames = dishes.map(function(dish){
+    return `${dish.cuisine} ${dish.name}`
+  })
+  return newNames;
+}
+
+console.log(newNames())
 
 //8. Create a function that will append the cuisine type to the start of the dish's name. Then, return only the Vegetarian dish objects. So this function should return objects 11-13 with their names changed to "Vegetarian Lasagna", "Vegetarian Falafel", "Vegetarian Chili"
 //Map, Filter
@@ -187,6 +195,8 @@ console.log(evenServings)
 //9. Create a function that will return dishes whose ingredients array INCLUDES "chickpea".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Filter
+
+
 
 //10. Create a function that will return the total serving count of all dishes.
 //Must use Reduce, not a loop.
