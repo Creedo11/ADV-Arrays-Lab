@@ -116,13 +116,27 @@ function findMexicanFood() {
   return results;
 }
 
-let mexicanFood = findMexicanFood();
-console.log("Mexican Foods: ", mexicanFood);
+// let mexicanFood = findMexicanFood();
+// console.log("Mexican Foods: ", mexicanFood);
 
 // <<<<<<<<<<<<<<<<< PROBLEMS <<<<<<<<<<<<<<<<<
 
 //1. Create a function that will return all dishes with the cuisine type of "vegetarian"
 //Filter
+
+function problemOne(){
+
+  let results = dishes.filter(function(el){
+    if(el.cuisine === "Vegetarian"){
+      return true;
+    }
+  })
+
+  return results;
+}
+
+let problemOne_result = problemOne()
+console.log(problemOne_result)
 
 //2. Create a function that will return all dishes with the cuisine type of "Italian" and a serving size greater than 5.
 //Filter
