@@ -207,12 +207,21 @@ function problemFive(){
   return results;
 }
 
-let problemFiveResults = problemFive()
-console.log(problemFiveResults)
+// let problemFiveResults = problemFive()
+// console.log(problemFiveResults)
 
 
 //6a. Create a function that will return an array of only the names of the cuisine types. Ie ['Italian', 'Mexican', ...]
 //Map
+function problemSixA(){
+ let cuisineTypes = dishes.map(function(dish){
+    return `${dish.cuisine}`;
+ })
+ return cuisineTypes;
+}
+
+let newArray = problemSixA()
+console.log(newArray)
 
 // BONUS: (come back to this after finishing all)
 //6b. Use the filter method to eliminate duplicates, leaving only distinct values in the array
