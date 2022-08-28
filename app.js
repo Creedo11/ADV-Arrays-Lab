@@ -156,18 +156,31 @@ function problemTwo(callback){
     }
   }
 
-  let problemTwoResults = problemTwo(servGreaterThanFive)
-  console.log(problemTwoResults)
+  // let problemTwoResults = problemTwo(servGreaterThanFive)
+  // console.log(problemTwoResults)
 
 //3. Create a function that will return only dishes whose serving id number matches their serving count.
 //Filter
 
+function problemThree(){
+  let results = dishes.filter(function(dish){
+    if(dish.id === dish.servings){
+      return true;
+    }
+  })
+  return results;
+}
+
+let problemThreeResults = problemThree()
+console.log(problemThreeResults)
+
+
 //4. Create a function that will return only dishes whose serving count is even.
 //Filter
 
-function evenServingCounts(callbacks){
+function evenServingCounts(callback){
   let results = dishes.filter(function(dish){
-    if(callbacks(dish.servings)){
+    if(callback(dish.servings)){
       return true;
     }
   })
