@@ -135,8 +135,8 @@ function problemOne(){
   return results;
 }
 
-let problemOne_result = problemOne()
-console.log(problemOne_result)
+// let problemOne_result = problemOne()
+// console.log(problemOne_result)
 
 //2. Create a function that will return all dishes with the cuisine type of "Italian" and a serving size greater than 5.
 //Filter
@@ -146,6 +146,26 @@ console.log(problemOne_result)
 
 //4. Create a function that will return only dishes whose serving count is even.
 //Filter
+
+function evenServingCounts(callbacks){
+  let results = dishes.filter(function(dish){
+    if(callbacks(dish.servings)){
+      return true;
+    }
+  })
+  return results;
+}
+
+
+function findEven(num){
+  if(num % 2 == 0){
+    return true;
+  }
+}
+
+let evenServings = evenServingCounts(findEven)
+console.log(evenServings)
+
 
 //5. Create a function that will return dishes whose ingredients array is "tomato" and "cheese".
 //Filter
