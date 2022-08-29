@@ -220,18 +220,18 @@ function problemSixA(){
  return cuisineTypes;
 }
 
-let newArray = problemSixA()
-console.log(newArray)
+// let newArray = problemSixA()
+// console.log(newArray)
+
 
 // BONUS: (come back to this after finishing all)
 //6b. Use the filter method to eliminate duplicates, leaving only distinct values in the array
 
 //7. Create a function that will append the cuisine type to the start of the dish's name. Ie, "Italian Pizza"
 //Map
-
 function newNames(){
   let newNames = dishes.map(function(dish){
-    return `${dish.cuisine} ${dish.name}`
+    return `${dish.cuisine} ${dish.name}`;
   })
   return newNames;
 }
@@ -241,12 +241,26 @@ function newNames(){
 
 //8. Create a function that will append the cuisine type to the start of the dish's name. Then, return only the Vegetarian dish objects. So this function should return objects 11-13 with their names changed to "Vegetarian Lasagna", "Vegetarian Falafel", "Vegetarian Chili"
 //Map, Filter
+function vegAppendedCuisine(){ 
+  let vegAppended = dishes.filter(function(el){
+      return el.cuisine === "Vegetarian";
+    })
+    .map(function(el){
+      return`${el.cuisine} ${el.name}`
+    })
+  return vegAppended;
+}
+
+let vegAppendedCuisineResults = vegAppendedCuisine()
+console.log(vegAppendedCuisineResults)
+
+
+
 
 // <<<<<<<<<<<<<<<<< BONUS <<<<<<<<<<<<<<<<<
 //9. Create a function that will return dishes whose ingredients array INCLUDES "chickpea".
 //Hint: You do not want to check the array's indexes to find out what the array INCLUDES.
 //Filter
-
 function foodFinder(callback){
   let results = dishes.filter(function(dish){
     if(callback(dish.ingredients)){
@@ -264,6 +278,7 @@ function findChickpea(ingredients){
 
 // let foodFinderResult = foodFinder(findChickpea)
 // console.log(foodFinderResult)
+
 
 //10. Create a function that will return the total serving count of all dishes.
 //Must use Reduce, not a loop.
