@@ -226,6 +226,17 @@ function problemSixA(){
 
 // BONUS: (come back to this after finishing all)
 //6b. Use the filter method to eliminate duplicates, leaving only distinct values in the array
+function problemSixB(){
+  let cuisineTypes = dishes.map(function(dish){
+     return `${dish.cuisine}`;
+  })
+  let removeDups = cuisineTypes.filter((item, index) => cuisineTypes.indexOf(item) === index);
+  return removeDups;
+}
+
+// let uniqueCuisineTypes = problemSixB()
+// console.log(uniqueCuisineTypes)
+
 
 //7. Create a function that will append the cuisine type to the start of the dish's name. Ie, "Italian Pizza"
 //Map
@@ -251,8 +262,10 @@ function vegAppendedCuisine(){
   return vegAppended;
 }
 
-let vegAppendedCuisineResults = vegAppendedCuisine()
-console.log(vegAppendedCuisineResults)
+// let vegAppendedCuisineResults = vegAppendedCuisine()
+// console.log(vegAppendedCuisineResults)
+
+
 
 
 
